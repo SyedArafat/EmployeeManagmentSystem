@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="WebApplication1.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color:#aaafb7;">
+    <form id="form1" runat="server">
+    <div>
+        <asp:Image ID="Image1" runat="server" Height="106px" ImageUrl="~/images/cropped-header_scroll.jpg" Width="1001px" style="margin-bottom: 0px" />      
+    </div>
+        <br />
+        <br />
+        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticSubMenuIndent="10px" BackColor="#E3EAEB" BorderColor="Black" BorderStyle="Dotted" DynamicHorizontalOffset="2" Font-Bold="True" Font-Names="Times New Roman" Font-Size="Larger" ForeColor="#666666" ItemWrap="True" RenderingMode="Table" Width="965px">
+            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#E3EAEB" />
+            <DynamicSelectedStyle BackColor="#1C5E55" />
+            <DynamicItemTemplate>
+                <%# Eval("Text") %>
+            </DynamicItemTemplate>
+            <Items>
+                <asp:MenuItem NavigateUrl="~/adminHome.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/employeeList.aspx" Text="Employee" Value="Employee">
+                            <asp:MenuItem NavigateUrl="~/employeeList.aspx" Text="Employee List" Value="Employee List"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/addNew.aspx" Text="Add New" Value="add new"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/adminEditDelete.aspx" Text="Edit/Delete Employee" Value="deleteedit"></asp:MenuItem>
+
+                </asp:MenuItem>
+                
+                <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Search" Value="Search">
+                            <asp:MenuItem NavigateUrl="~/employeeList.aspx" Text="Search By ID" Value="Employee List"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/addNew.aspx" Text="Search By Name" Value="add new"></asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/employeeList.aspx" Text="Search By Department" Value="Employee List"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/addNew.aspx" Text="Search By Role" Value="add new"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Report" Value="Report"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/addNew.aspx" Text="Add New" Value="Add New"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/userProfile.aspx" Text="My Profile" Value="My Profile"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/signout.aspx" Text="Sign Out"  Value="Sign Out"></asp:MenuItem>
+
+            </Items>
+            
+            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <StaticSelectedStyle BackColor="#1C5E55" />
+        </asp:Menu>
+        <br />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
